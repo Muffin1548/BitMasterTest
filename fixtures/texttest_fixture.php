@@ -24,15 +24,20 @@ $items = [
 
 $app = new GildedRose($items);
 
-$days = 2;
+$days = 20;
 if (count($argv) > 1) {
     $days = (int) $argv[1];
 }
 
 for ($i = 0; $i < $days; $i++) {
+    echo '<br>';
+    $items = $app->getItems();
     echo "-------- day ${i} --------" . PHP_EOL;
+    echo '<br>';
     echo 'name, sellIn, quality' . PHP_EOL;
     foreach ($items as $item) {
+        echo '<br>';
+        /** @var $item \GildedRose\products\Product*/
         echo $item . PHP_EOL;
     }
     echo PHP_EOL;
